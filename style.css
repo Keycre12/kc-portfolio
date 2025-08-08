@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background: #fff0f5;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 105, 180, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff6b8b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #ff6b8b;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    min-height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+#about-me {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    color: white;
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.home-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.home-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.home-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.home-image {
+    text-align: center;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+    background: white;
+    border-radius: 15px;
+    padding: 50px;
+    margin: 50px 0;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+}
+
+.section-title {
+    color: #ff6b8b;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.section-content {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-text {
+    color: #ffb3c6;
+    font-style: italic;
+}
+
+/* Achievements & Education alignment */
+#achievements .section-content,
+#education .section-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+
+#achievements .image,
+#projects .image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+}
+
+/* Education List Style */
+.education-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.education-list li {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.education-list strong {
+    color: #ff6b8b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .home-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .home-text h1 {
+        font-size: 36px;
+    }
+
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .content-section {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    #achievements .section-content,
+    #education .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
